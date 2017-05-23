@@ -1,0 +1,34 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("org.postgresql:postgresql:9.4-1206-jdbc42")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter')
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtime 'org.postgresql:postgresql:9.4-1206-jdbc42'
+	compile 'org.hibernate:hibernate-core:5.0.6.Final'
+	compile 'org.hibernate:hibernate-entitymanager:5.0.6.Final'
+	compile 'javax.servlet:jstl:1.2'
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
